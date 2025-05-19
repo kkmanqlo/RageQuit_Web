@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Mono.Data.Sqlite;
 
 public class NextLevelDoorTutorial : MonoBehaviour
 {
@@ -29,7 +28,6 @@ public class NextLevelDoorTutorial : MonoBehaviour
             Invoke(nameof(LoadScene), 0.5f);
         }
 
-        ActualizarProgresoEnBD();
     }
 
     private void LoadScene()
@@ -62,31 +60,4 @@ public class NextLevelDoorTutorial : MonoBehaviour
         }
     }
 
-     private void ActualizarProgresoEnBD()
-    {
-        string dbPath = "URI=file:" + Application.persistentDataPath + "/RageQuitDB.db";
-        int idProgreso = GameSession.Instance.IdProgreso;
-
-        string nombreEscena = SceneManager.GetActiveScene().name;
-        int idNivelActual = NivelMap.GetIdNivelPorNombre(nombreEscena);
-        int siguienteNivel = idNivelActual + 1;
-
-        using (var conexion = new SqliteConnection(dbPath))
-        {
-            conexion.Open();
-            using (var cmd = conexion.CreateCommand())
-            {
-                cmd.CommandText = @"
-                UPDATE ProgresoJugador
-                SET nivelActual = @siguienteNivel
-                WHERE idProgreso = @idProgreso AND nivelActual < @siguienteNivel";
-
-                cmd.Parameters.AddWithValue("@siguienteNivel", siguienteNivel);
-                cmd.Parameters.AddWithValue("@idProgreso", idProgreso);
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        Debug.Log($"Progreso actualizado. Nuevo nivel actual: {siguienteNivel}");
-    }
 }

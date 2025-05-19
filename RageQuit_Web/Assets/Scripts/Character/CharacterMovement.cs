@@ -155,20 +155,6 @@ public class CharacterMovement : MonoBehaviour
         // Desactivar animaciones.
         Animator.enabled = false;
 
-        // Obtener nombre de la escena actual para registrar la muerte correctamente.
-        string nombreEscena = SceneManager.GetActiveScene().name;
-        int idNivelActual = NivelMap.GetIdNivelPorNombre(nombreEscena);
-
-        // Registrar muerte si no es el tutorial.
-        if (idNivelActual != 1)
-        {
-            LevelStatsManager.Instance.RegistrarMuerte();
-        }
-        else
-        {
-            Debug.Log("No se registra la muerte en el tutorial");
-        }
-
         // Cambiar el color del personaje a rojo instantáneamente.
         spriteRenderer.DOColor(Color.red, 0.0f).OnComplete(() =>
         {
