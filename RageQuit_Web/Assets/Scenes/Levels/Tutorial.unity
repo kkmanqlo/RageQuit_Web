@@ -2785,6 +2785,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1181495290}
     - target: {fileID: 1480561839251688727, guid: af11b7bc9f3717f478c98dfd948a08d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480561839251688727, guid: af11b7bc9f3717f478c98dfd948a08d4, type: 3}
       propertyPath: resolutionDropdown
       value: 
       objectReference: {fileID: 1181495291}
@@ -2814,7 +2818,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 949625258}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b466e9be11c336349a99d32514cd24da, type: 3}
   m_Name: 

@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36a601ebec37934280dbe8dd1319b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverSound: {fileID: 8300000, guid: 5cc9eff290c4b65419d84c98e09d2592, type: 3}
+  hoverSound: {fileID: 8300000, guid: 33509a62f425cfe4287c707e53af2e83, type: 3}
 --- !u!82 &1406788876
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2360,6 +2360,10 @@ PrefabInstance:
       propertyPath: toggle
       value: 
       objectReference: {fileID: 8279452759081744373}
+    - target: {fileID: 1480561839251688727, guid: af11b7bc9f3717f478c98dfd948a08d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1480561839251688727, guid: af11b7bc9f3717f478c98dfd948a08d4, type: 3}
       propertyPath: resolutionDropdown
       value: 
